@@ -1,13 +1,15 @@
+import { IProduct } from "@/app/admin/dashboard/page";
 import {createSlice, PayloadAction} from "@reduxjs/toolkit";
 
-type IProduct = {
-    _id: string;
-    imgSrc: string;
-    fileKey: string;
-    name: string;
-    price: string;
-    category: string;
-};
+// bisa pake ini atau langsung dari page.tsx
+// type IProduct = {
+//     _id: string;
+//     imgSrc: string;
+//     fileKey: string;
+//     name: string;
+//     price: string;
+//     category: string;
+// };
 
 const initialState: IProduct = {
     _id: "",
