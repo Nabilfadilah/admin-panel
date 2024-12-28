@@ -4,8 +4,8 @@ export const makeToast = (text: string) => {
     toast.success(text, {
         style: {
             borderRadius: "4px",
-            background: "#333",
-            color: "fff"
+            background: "#333333",
+            color: "#FFFFFF"
         }
     });
 }
