@@ -88,7 +88,7 @@ const ProductForm = () => {
           }}
         />
 
-        <UploadButton
+        {/* <UploadButton
           endpoint="imageUploader"
           onClientUploadComplete={(res) => {
             // Do something with the response
@@ -99,7 +99,7 @@ const ProductForm = () => {
             // Do something with the error.
             alert(`ERROR! ${error.message}`);
           }}
-        />
+        /> */}
 
         {/* <UploadButton
           endpoint="imageUploader"
