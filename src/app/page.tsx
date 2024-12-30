@@ -13,6 +13,7 @@ export default function Home() {
     <main>
       <Navbar setShowCart={setShowCart} />
       {showCart && <Cart setShowCart={setShowCart} />}
+      <Hero />
     </main>
   );
 }
