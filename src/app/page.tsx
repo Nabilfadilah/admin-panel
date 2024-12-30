@@ -12,6 +12,7 @@ export default function Home() {
   return (
     <main>
       <Navbar setShowCart={setShowCart} />
+      {showCart && <Cart setShowCart={setShowCart} />}
     </main>
   );
 }
