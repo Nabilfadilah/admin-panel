@@ -1,5 +1,6 @@
 "use client";
 
+import Banner from "@/components/front-end/Banner";
 import Cart from "@/components/front-end/Cart";
 import Feature from "@/components/front-end/Feature";
 import Hero from "@/components/front-end/Hero";
@@ -17,6 +18,7 @@ export default function Home() {
       <Hero />
       <Feature />
       <TrendingProducts />
+      <Banner />
     </main>
   );
 }
