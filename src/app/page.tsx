@@ -4,6 +4,7 @@ import Cart from "@/components/front-end/Cart";
 import Feature from "@/components/front-end/Feature";
 import Hero from "@/components/front-end/Hero";
 import Navbar from "@/components/front-end/Navbar";
+import TrendingProducts from "@/components/front-end/TrendingProducts";
 import {useState} from "react";
 
 export default function Home() {
@@ -15,6 +16,7 @@ export default function Home() {
       {showCart && <Cart setShowCart={setShowCart} />}
       <Hero />
       <Feature />
+      <TrendingProducts />
     </main>
   );
 }
