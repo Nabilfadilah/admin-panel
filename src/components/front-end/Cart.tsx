@@ -12,9 +12,13 @@ const Cart = ({setShowCart}: any) => {
 
   const getTotal = () => {
     let total = 0;
-    products.forEach((item) => (total = total + item.price * item.quantity));
+    products.forEach((item) => {
+      total += item.price * item.quantity;
+    });
     return total;
   };
+
+  const total = getTotal();
 
   return (
     <div className="bg-slate-900/50 w-full min-h-screen fixed left-0 top-0 z-20 overflow-y-scroll">
@@ -27,22 +31,22 @@ const Cart = ({setShowCart}: any) => {
           Your Cart
         </h3>
 
-        {/* <div className="mt-6 space-y-2">
-            {products?.map((item: any) => (
-                <CartProduct 
-                    key={item.id}
-                    id={item.id}
-                    img=(item.img)
-                    title={item.title}
-                    price={item.price}
-                    quantity={item.quantity}
-                />
-            ))}
-        </div> */}
+        <div className="mt-6 space-y-2">
+          {products?.map((item: any) => (
+            <CartProduct
+              key={item.id}
+              id={item.id}
+              img={item.img}
+              title={item.title}
+              price={item.price}
+              quantity={item.quantity}
+            />
+          ))}
+        </div>
 
         <div className="flex justify-between items-center font-medium text-xl py-4">
           <p>Total:</p>
-          <p>${getTotal()}.00</p>
+          <p>${total}.00</p>
         </div>
 
         <button className="bg-black text-white text-center w-full rounded-3xl py-2 hover:bg-accent mb-4 mt-4">
