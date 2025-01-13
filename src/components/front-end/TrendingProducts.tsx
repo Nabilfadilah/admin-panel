@@ -27,9 +27,9 @@ const TrendingProduct = () => {
   }, []);
 
   return (
-    <div className="container mt-32">
+    <div className="container mt-24">
       <div className="sm:flex justify-between items-center">
-        <h2 className="text-4xl font-medium">Trending Products</h2>
+        <h2 className="text-3xl font-medium">Produk Baru</h2>
 
         <div className="text-gray-500 flex gap-4 text-xl mt-4 sm:mt-0">
           <div className="text-black">New</div>
