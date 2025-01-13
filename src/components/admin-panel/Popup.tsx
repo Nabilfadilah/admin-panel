@@ -38,52 +38,78 @@ const Popup = ({setOpenPopup, setUpdateTable}: PropsType) => {
   };
 
   return (
-    <div className="fixed top-0 left-0 w-full h-screen bg-[#00000070] grid place-items-center">
-      <div className="bg-white w-[700px] py-8 rounded-lg text-center relative">
+    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+      <div className="bg-white w-full max-w-xl py-8 px-6 rounded-lg shadow-lg relative">
+        {/* Close Icon */}
         <IoIosCloseCircleOutline
-          className="absolute text-2xl right-0 top-0 m-4 cursor-pointer hover:text-red-600"
+          className="absolute text-3xl text-gray-600 top-4 right-4 cursor-pointer hover:text-red-600"
           onClick={() => setOpenPopup(false)}
         />
 
-        <h2 className="text-2xl">Edit Product</h2>
+        {/* Title */}
+        <h2 className="text-2xl font-bold text-gray-800 text-center mb-6">
+          Edit Product
+        </h2>
 
-        <form className="mt-6 w-fit space-y-4 mx-auto" onSubmit={handleSubmit}>
-          {/* name */}
-          <input
-            className="border block border-gray-500 outline-none px-4"
-            type="text"
-            placeholder="Name"
-            value={inputData.name}
-            onChange={(e) => setInputData({...inputData, name: e.target.value})}
-            required
-          />
+        {/* Form */}
+        <form className="space-y-5" onSubmit={handleSubmit}>
+          {/* Product Name */}
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-1">
+              Product Name
+            </label>
+            <input
+              className="border border-gray-300 rounded-md w-full px-4 py-2 focus:ring-2 focus:ring-pink-400 focus:outline-none"
+              type="text"
+              placeholder="Enter product name"
+              value={inputData.name}
+              onChange={(e) =>
+                setInputData({...inputData, name: e.target.value})
+              }
+              required
+            />
+          </div>
 
-          {/* name */}
-          <input
-            className="border block border-gray-500 outline-none px-4"
-            type="text"
-            placeholder="Category"
-            value={inputData.category}
-            onChange={(e) =>
-              setInputData({...inputData, category: e.target.value})
-            }
-            required
-          />
+          {/* Product Category */}
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-1">
+              Category
+            </label>
+            <input
+              className="border border-gray-300 rounded-md w-full px-4 py-2 focus:ring-2 focus:ring-pink-400 focus:outline-none"
+              type="text"
+              placeholder="Enter product category"
+              value={inputData.category}
+              onChange={(e) =>
+                setInputData({...inputData, category: e.target.value})
+              }
+              required
+            />
+          </div>
 
-          {/* price */}
-          <input
-            className="border block border-gray-500 outline-none px-4"
-            type="text"
-            placeholder="{Price}"
-            value={inputData.price}
-            onChange={(e) =>
-              setInputData({...inputData, price: e.target.value})
-            }
-            required
-          />
+          {/* Product Price */}
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-1">
+              Price
+            </label>
+            <input
+              className="border border-gray-300 rounded-md w-full px-4 py-2 focus:ring-2 focus:ring-pink-400 focus:outline-none"
+              type="number"
+              placeholder="Enter product price"
+              value={inputData.price}
+              onChange={(e) =>
+                setInputData({...inputData, price: e.target.value})
+              }
+              required
+            />
+          </div>
 
-          <div className="flex justify-end">
-            <button className="bg-accent block text-white px-8 py-2 rounded-lg self-center">
+          {/* Save Button */}
+          <div className="flex justify-center">
+            <button
+              type="submit"
+              className="bg-cyan-900 text-white px-6 py-2 rounded-lg font-medium hover:bg-pink-600 transition duration-200"
+            >
               Save
             </button>
           </div>
