@@ -55,30 +55,31 @@ const ProductRow = ({
   };
 
   return (
-    <tr>
-      <td>
-        <div>{srNo}</div>
+    <tr className="hover:bg-gray-100 transition-colors">
+      <td className="py-3 px-6 border-b border-gray-300">
+        <div>{srNo}.</div>
       </td>
-      <td>
+      <td className="py-3 px-6 border-b border-gray-300">
         <div>{product.name}</div>
       </td>
-      <td>$ {product.price}</td>
-      <td className="py-2">
+      <td className="py-3 px-6 border-b border-gray-300">$ {product.price}</td>
+      <td className="py-3 px-6 border-b border-gray-300">
         <Image
           src={product.imgSrc || "/path/to/default_image.jpg"}
           width={40}
           height={40}
           alt="product_image"
+          className="rounded-md border border-gray-200"
         />
       </td>
-      <td>
-        <div className="text-2xl flex items-center gap-2 text-gray-600">
+      <td className="py-3 px-6 border-b border-gray-300">
+        <div className="text-xl flex items-center gap-4">
           <CiEdit
-            className="cursor-pointer hover:text-black"
+            className="cursor-pointer text-blue-600 hover:text-blue-800"
             onClick={onEdit}
           />
           <RiDeleteBin5Fill
-            className="text-[20px] cursor-pointer hover:text-red-600"
+            className="cursor-pointer text-red-600 hover:text-red-800"
             onClick={onDelete}
           />
         </div>
