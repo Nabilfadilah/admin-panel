@@ -26,8 +26,16 @@ const CartProduct: React.FC<PropsType> = ({
         <img className="h-[80px]" src={img} alt={title} />
         <div className="space-y-2">
           <h3 className="font-medium">{title}</h3>
+          {/* <p className="text-gray-600 text-[14px]">
+            {quantity} X Rp{price}
+          </p> */}
           <p className="text-gray-600 text-[14px]">
-            {quantity} X Rp{price}.00
+            {quantity} X{" "}
+            {new Intl.NumberFormat("id-ID", {
+              style: "currency",
+              currency: "IDR",
+              maximumFractionDigits: 0,
+            }).format(Number(price))}
           </p>
         </div>
       </div>
