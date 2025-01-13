@@ -11,7 +11,7 @@ const Hero = () => {
             </p>
 
             <h1 className="text-topHeadingPrimary font-bold text-4xl md:text-5xl">
-              Koleksi product terbaik 2025
+              Koleksi produk terbaik 2025
             </h1>
 
             <h3 className="text-xl font-['Oregano', cursive]">
