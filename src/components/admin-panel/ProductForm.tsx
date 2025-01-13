@@ -52,7 +52,15 @@ const ProductForm = () => {
 
   return (
     <div>
-      <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
+      <form
+        className="bg-white shadow-lg rounded-lg p-6 space-y-6"
+        onSubmit={handleSubmit}
+      >
+        {/* Header */}
+        <h2 className="text-xl font-bold text-gray-800 text-start">
+          Add New Product
+        </h2>
+
         {/* <Image
           alt="product_image"
           className="max-h-[300px] w-auto object-contain rounded-md"
@@ -61,32 +69,38 @@ const ProductForm = () => {
           height={500}
         /> */}
 
-        <Image
-          alt="product_image"
-          src={payload.imgSrc || "/avatar.png"}
-          width={800}
-          height={500}
-          className="max-h-[300px] w-auto object-contain rounded-md"
-        />
+        {/* Product Image */}
+        <div className="text-start">
+          <Image
+            alt="product_image"
+            src={payload.imgSrc || "/bgupload.jpg"}
+            width={800}
+            height={500}
+            className="max-h-[300px] w-auto object-contain rounded-md"
+          />
+        </div>
 
-        <UploadButton
-          endpoint="imageUploader"
-          onClientUploadComplete={(res) => {
-            console.log("Upload result:", res);
-            if (res && res.length > 0) {
-              setPayload({
-                ...payload,
-                imgSrc: res[0]?.url,
-                fileKey: res[0]?.key,
-              });
-            } else {
-              console.error("No files uploaded");
-            }
-          }}
-          onUploadError={(error: Error) => {
-            console.log(`Error! ${error}`);
-          }}
-        />
+        {/* Upload Button */}
+        <div className="justify-items-start">
+          <UploadButton
+            endpoint="imageUploader"
+            onClientUploadComplete={(res) => {
+              console.log("Upload result:", res);
+              if (res && res.length > 0) {
+                setPayload({
+                  ...payload,
+                  imgSrc: res[0]?.url,
+                  fileKey: res[0]?.key,
+                });
+              } else {
+                console.error("No files uploaded");
+              }
+            }}
+            onUploadError={(error: Error) => {
+              console.log(`Error! ${error}`);
+            }}
+          />
+        </div>
 
         {/* <UploadButton
           endpoint="imageUploader"
@@ -121,42 +135,54 @@ const ProductForm = () => {
 
         {/* product name */}
         <div>
-          <label className="block ml-1 font-bold">Product Name</label>
+          <label className="block text-sm font-semibold text-gray-700 mb-1">
+            Product Name
+          </label>
           <input
             type="text"
-            className="bg-gray-300 w-full px-4 py-2 border outline-pink rounded-md"
+            className="bg-gray-100 w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-400"
             value={payload.name}
             onChange={(e) => setPayload({...payload, name: e.target.value})}
+            placeholder="Enter product name"
             required
           />
         </div>
 
         {/* product category */}
         <div>
-          <label className="block ml-1 font-bold">Product Category</label>
+          <label className="block text-sm font-semibold text-gray-700 mb-1">
+            Product Category
+          </label>
           <input
             type="text"
-            className="bg-gray-300 w-full px-4 py-2 border outline-pink rounded-md"
+            className="bg-gray-100 w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-400"
             value={payload.category}
             onChange={(e) => setPayload({...payload, category: e.target.value})}
+            placeholder="Enter product category"
             required
           />
         </div>
 
         {/* product price */}
         <div>
-          <label className="block ml-1 font-bold">Product Price</label>
+          <label className="block text-sm font-semibold text-gray-700 mb-1">
+            Product Price
+          </label>
           <input
-            type="text"
-            className="bg-gray-300 w-full px-4 py-2 border outline-pink rounded-md"
+            type="number"
+            className="bg-gray-100 w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-400"
             value={payload.price}
             onChange={(e) => setPayload({...payload, price: e.target.value})}
+            placeholder="Enter product price"
             required
           />
         </div>
 
         <div className="flex justify-center">
-          <button className="bg-pink text-white px-8 py-2 rounded-lg">
+          <button
+            type="submit"
+            className="bg-cyan-900 text-white px-6 py-2 rounded-lg font-medium hover:bg-pink-600 transition duration-200"
+          >
             Add Product
           </button>
         </div>
