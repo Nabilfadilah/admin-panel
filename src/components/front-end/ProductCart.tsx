@@ -49,7 +49,13 @@ const ProductCart = ({id, img, category, title, price}: propsType) => {
         </div>
 
         <div className="flex justify-between items-center mt-4">
-          <h2 className="font-medium text-accent text-xl">Rp {price}</h2>
+          <h2 className="font-medium text-accent text-xl">
+            {new Intl.NumberFormat("id-ID", {
+              style: "currency",
+              currency: "IDR",
+              maximumFractionDigits: 0,
+            }).format(price)}
+          </h2>
           <div
             className="flex gap-2 items-center rounded bg-cyan-900 text-white px-4 py-2 cursor-pointer hover:bg-cyan-800"
             onClick={addProductToCart}
