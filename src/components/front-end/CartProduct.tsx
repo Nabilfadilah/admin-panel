@@ -27,7 +27,7 @@ const CartProduct: React.FC<PropsType> = ({
         <div className="space-y-2">
           <h3 className="font-medium">{title}</h3>
           <p className="text-gray-600 text-[14px]">
-            {quantity} X ${price}.00
+            {quantity} X Rp{price}.00
           </p>
         </div>
       </div>
