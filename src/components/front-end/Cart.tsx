@@ -49,7 +49,13 @@ const Cart = ({setShowCart}: any) => {
 
         <div className="flex justify-between items-center font-medium text-xl py-4">
           <p>Total:</p>
-          <p>Rp {total}.000</p>
+          <p>
+            {new Intl.NumberFormat("id-ID", {
+              style: "currency",
+              currency: "IDR",
+              maximumFractionDigits: 0,
+            }).format(Number(total))}
+          </p>
         </div>
 
         <button className="bg-cyan-900 text-white font-semibold text-center w-full rounded-3xl py-2 hover:bg-cyan-800 mb-4 mt-4 flex items-center justify-center gap-2">
