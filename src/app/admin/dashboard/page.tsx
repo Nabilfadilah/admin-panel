@@ -39,30 +39,30 @@ const Dashboard = () => {
 
   return (
     <div className="bg-white h-[calc(100vh-96px)] rounded-lg p-4">
-      <h2 className="text-3xl">All Products</h2>
+      <p className="text-xl from-neutral-900">All Products</p>
 
       <div className="mt-4 h-[calc(100vh-180px)] overflow-y-auto">
-        <table className="min-w-full border-collapse border border-gray-200 bg-white shadow-lg rounded-lg">
-          <thead className="bg-gray-100 text-gray-600 text-sm">
+        <table className="min-w-full table-auto border border-gray-300 bg-white shadow-md rounded-lg">
+          <thead className="bg-gray-200 text-gray-700 uppercase text-sm font-medium">
             <tr>
-              <th className="py-3 px-4 border-b border-x border-gray-200 text-left">
-                SR No.
+              <th className="py-3 px-6 text-left border-b border-gray-300">
+                No.
               </th>
-              <th className="py-3 px-4 border-b border-x border-gray-200 text-left">
+              <th className="py-3 px-6 text-left border-b border-gray-300">
                 Name
               </th>
-              <th className="py-3 px-4 border-b border-x border-gray-200 text-left">
+              <th className="py-3 px-6 text-left border-b border-gray-300">
                 Price
               </th>
-              <th className="py-3 px-4 border-b border-x border-gray-200 text-left">
+              <th className="py-3 px-6 text-left border-b border-gray-300">
                 Picture
               </th>
-              <th className="py-3 px-4 border-b border-x border-gray-200 text-left">
+              <th className="py-3 px-6 text-left border-b border-gray-300">
                 Actions
               </th>
             </tr>
           </thead>
-          <tbody className="text-sm text-gray-700">
+          <tbody className="text-sm text-gray-600">
             {products.map((product: IProduct, index) => (
               <ProductRow
                 key={product._id}
