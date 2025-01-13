@@ -14,26 +14,28 @@ const Navbar = ({setShowCart}: PropsType) => {
   const cartCount = useAppSelector((state) => state.cartReducer.length);
 
   return (
-    <div className="pt-4 bg-white top-0 sticky">
+    <div className="pt-4 bg-white top-0 sticky shadow-lg">
       <div className="container">
         <div className="flex justify-between items-center">
-          <div className="text-4xl font-bold">LOGAY</div>
+          <div className="text-4xl font-bold">BilHut</div>
+
+          {/* input search */}
           <div className="lg:flex hidden w-full max-w-[500px]">
             <input
               name="search"
-              className="border-2 border-accent px-6 py-2 w-full"
+              className="border-2 border-cyan-800 rounded-s-xl px-6 py-2 w-full"
               type="text"
               placeholder="Search for products..."
             />
 
-            <div className="bg-accent text-white text-[26px] grid place-items-center px-4 rounded-sm">
-              <BsSearch />
+            <div className="bg-cyan-800 text-white text-[26px] rounded-e-xl grid place-items-center px-4">
+              <BsSearch size={18} />
             </div>
           </div>
 
           <div className="flex gap-4 md:gap-8 items-center">
             <div className="md:flex hidden gap-3">
-              <div className="rounded-full border-2 border-gray-300 text-gray-500 text-[32px] w-[50px] h-[50px] grid place-items-center">
+              <div className="rounded-full border-2 border-gray-300 text-gray-500 text-[32px] w-[40px] h-[40px] grid place-items-center">
                 <AiOutlineUser />
               </div>
 
